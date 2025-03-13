@@ -1,16 +1,15 @@
-# استفاده از نسخه کم‌حجم پایتون
+# استفاده از نسخه سبک پایتون
 FROM python:3.9-slim
 
 # تنظیم دایرکتوری کاری
 WORKDIR /app
 
-# کپی کردن فایل‌های مورد نیاز
-COPY requirements.txt ./
-COPY . ./
+# کپی کردن فایل‌ها
+COPY . .
 
-# نصب وابستگی‌ها
-RUN pip install --upgrade pip \
-    && pip install --no-cache-dir -r requirements.txt
+# به‌روزرسانی pip و نصب وابستگی‌ها (بدون کش)
+RUN pip install --upgrade pip
+RUN pip install requests pyTelegramBotAPI
 
 # اجرای برنامه
 CMD ["python", "chatgbtea.py"]
