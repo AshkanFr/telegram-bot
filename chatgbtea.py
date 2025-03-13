@@ -51,8 +51,8 @@
 
 #Chatgpt API
 
-import telebot
-import requests
+import telebot # type: ignore
+import requests # type: ignore
 
 TELEGRAM_TOKEN = "7961077915:AAHUALRpnmSjimTM8PC4HTCoYgDgKxkN7rY"
 OPENROUTER_API_KEY = "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"
