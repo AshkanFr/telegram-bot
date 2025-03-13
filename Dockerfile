@@ -1,15 +1,16 @@
-# استفاده از تصویر پایه پایتون
+# استفاده از نسخه کم‌حجم پایتون به عنوان بیس ایمیج
 FROM python:3.9-slim
 
 # تنظیم دایرکتوری کاری
 WORKDIR /app
 
-# کپی کردن فایل‌های مورد نیاز به دایرکتوری کاری
-COPY requirements.txt .
-COPY chatgbtea.py .
+# کپی کردن فایل‌های مورد نیاز
+COPY requirements.txt ./
+COPY . ./
 
 # نصب وابستگی‌ها
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
 
-# فرمان شروع برنامه
+# اجرای برنامه
 CMD ["python", "chatgbtea.py"]
