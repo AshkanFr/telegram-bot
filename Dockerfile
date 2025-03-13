@@ -7,7 +7,7 @@ WORKDIR /app
 # کپی کردن فایل‌ها
 COPY . .
 
-# به‌روزرسانی pip و نصب وابستگی‌ها (بدون کش)
+# به‌روزرسانی pip و نصب مستقیم وابستگی‌ها (بدون نیاز به requirements.txt)
 RUN pip install --upgrade pip
 RUN pip install requests pyTelegramBotAPI
 
