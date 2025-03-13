@@ -50,12 +50,16 @@
 #--------------------------------------------------------------------------------------------------------------------#
 
 #Chatgpt API
-
+import os
 import telebot # type: ignore
 import requests # type: ignore
 
-TELEGRAM_TOKEN = "7961077915:AAHUALRpnmSjimTM8PC4HTCoYgDgKxkN7rY"
-OPENROUTER_API_KEY = "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"
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+
+print("TELEGRAM_TOKEN:", TELEGRAM_TOKEN)
+print("OPENROUTER_API_KEY:", OPENROUTER_API_KEY)
+
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
